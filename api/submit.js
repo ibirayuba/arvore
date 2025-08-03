@@ -11,7 +11,7 @@ const supabase = createClient(
 );
 
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('servico-form');
+  const form = document.getElementById('cadastro');
   const mensagem = document.getElementById('mensagem');
 
   form.addEventListener('submit', async (e) => {
