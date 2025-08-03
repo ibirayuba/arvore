@@ -1,34 +1,43 @@
-// servicos.js
-const SUPABASE_URL = 'https://vymiwjhqbqzdydbdzqhu.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_e0Qxx98pQTMkQsgzCL-QWA_vv0Mp3Hq';
+// assets/js/services.js
 
-async function carregarServicos() {
-  const response = await fetch(`${SUPABASE_URL}/rest/v1/servicos?select=*`, {
-    headers: {
-      apikey: SUPABASE_KEY,
-      Authorization: `Bearer ${SUPABASE_KEY}`,
-    },
-  });
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
-  const servicos = await response.json();
-  const container = document.getElementById('lista-servicos');
+const supabaseUrl = 'https://vymiwjhqbqzdydbdzqhu.supabase.co';
+const supabaseKey = 'sb_publishable_e0Qxx98pQTMkQsgzCL-QWA_vv0Mp3Hq';
+const supabase = createClient(supabaseUrl, supabaseKey);
 
-  if (!container) return;
-  container.innerHTML = '';
+const container = document.getElementById('services-list');
 
-  servicos.forEach((item) => {
-    const card = document.createElement('div');
-    card.className = 'bg-white text-[#280a32] p-4 rounded shadow';
-    card.innerHTML = `
-      <h4 class="text-xl font-bold">${item.nome}</h4>
-      <p><strong>Serviço:</strong> ${item.servico}</p>
-      <p><strong>Local:</strong> ${item.localidade}</p>
-      <p><strong>Atendimento:</strong> ${item.atendimento}</p>
-      <p><strong>Contato:</strong> ${item.contato}</p>
-      ${item.link ? `<p><a href="${item.link}" class="text-[#386b14] underline" target="_blank">Ver mais</a></p>` : ''}
-    `;
-    container.appendChild(card);
-  });
+async function fetchServices() {
+  const { data, error } = await supabase.from('servicos').select('*').order('created_at', { ascending: false });
+
+  if (error) {
+    console.error('Erro ao buscar serviços:', error);
+    container.innerHTML = '<p class="white">Não foi possível carregar os serviços.</p>';
+    return;
+  }
+
+  if (!data || data.length === 0) {
+    container.innerHTML = '<p class="white">Nenhum serviço cadastrado ainda.</p>';
+    return;
+  }
+
+  container.innerHTML = data.map(service => `
+    <div class="w-100pc md-w-50pc">
+      <div class="br-8 p-5 m-5 bg-indigo-lightest-10 pointer hover-scale-up-1 ease-300">
+        <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-4 fs-s4 uppercase">
+          ${service.servico || 'Serviço'}
+        </div>
+        <div class="indigo-lightest fw-600 fs-m1">
+          <strong>${service.nome}</strong><br>
+          ${service.localidade}<br>
+          <span class="opacity-50">${service.atendimento}</span><br>
+          <span class="opacity-30">${service.contato}</span>
+        </div>
+        ${service.link ? `<a href="${service.link}" target="_blank" class="mt-5 button bg-black fs-s3 white no-underline">Ver trabalho</a>` : ''}
+      </div>
+    </div>
+  `).join('');
 }
 
-document.addEventListener('DOMContentLoaded', carregarServicos);
+fetchServices();
