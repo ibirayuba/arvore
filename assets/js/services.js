@@ -1,26 +1,32 @@
 // assets/js/services.js
 
+// Exibe os serviços usando a chave pública, sem permitir inserts
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
 const supabaseUrl = 'https://vymiwjhqbqzdydbdzqhu.supabase.co';
-const supabaseKey = 'sb_publishable_e0Qxx98pQTMkQsgzCL-QWA_vv0Mp3Hq';
+const supabaseKey = 'sb_publishable_e0Qxx98pQTMkQsgzCL-QwA_vv0Mp3Hq';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const container = document.getElementById('services-list');
 
 async function fetchServices() {
-  const { data, error } = await supabase.from('servicos').select('*').order('created_at', { ascending: false });
+  const { data, error } = await supabase
+    .from('servicos')
+    .select('*')
+    .order('created_at', { ascending: false });
 
   if (error) {
     console.error('Erro ao buscar serviços:', error);
-    container.innerHTML = '<p class="white">Não foi possível carregar os serviços.</p>';
+    if (container) container.innerHTML = '<p class="white">Não foi possível carregar os serviços.</p>';
     return;
   }
 
   if (!data || data.length === 0) {
-    container.innerHTML = '<p class="white">Nenhum serviço cadastrado ainda.</p>';
+    if (container) container.innerHTML = '<p class="white">Nenhum serviço cadastrado ainda.</p>';
     return;
   }
+
+  if (!container) return;
 
   container.innerHTML = data.map(service => `
     <div class="w-100pc md-w-50pc">
@@ -40,4 +46,4 @@ async function fetchServices() {
   `).join('');
 }
 
-fetchServices();
+document.addEventListener('DOMContentLoaded', fetchServices);
