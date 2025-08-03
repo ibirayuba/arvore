@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>IcamiabasLab</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <style>
+      :root {
+        --cor-primaria: #280a32;
+        --cor-secundaria: #386b14;
+        --cor-branca: #ffffff;
+      }
+      body {
+        background-color: var(--cor-branca);
+        color: var(--cor-primaria);
+      }
+      .btn-custom {
+        background-color: var(--cor-secundaria);
+        color: var(--cor-branca);
+        padding: 0.75rem 1.25rem;
+        border-radius: 8px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-custom:hover {
+        background-color: #2e5e10;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navegação -->
+    <header class="navbar">
+      <div class="container">
+        <h1 class="logo">IcamiabasLab</h1>
+        <nav>
+          <a href="#servicos">Serviços</a>
+          <a href="#cadastro">Cadastro</a>
+          <a href="#apoio">Apoie</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h2 class="title">Impulsione o trabalho das mulheres da Amazônia</h2>
+        <p class="subtitle">Conectamos talentos da região periférica à economia digital.</p>
+      </div>
+    </section>
+
+    <!-- Apoio -->
+    <section id="apoio" class="section">
+      <div class="container">
+        <form>
+          <input type="email" placeholder="Digite seu e-mail" />
+          <button type="submit" class="btn-custom">Quero apoiar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="section">
+      <div class="container">
+        <h3 class="section-title">Serviços em Destaque</h3>
+        <div id="cards-container" class="cards-grid">
+          <!-- os cards serão carregados por servicos.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Cadastro -->
+    <section id="cadastro" class="section">
+      <div class="container">
+        <h3 class="section-title">Cadastre seu serviço</h3>
+        <form id="service-form">
+          <input type="text" name="nome" placeholder="Nome completo" required />
+          <input type="text" name="servico" placeholder="Tipo de serviço" required />
+          <input type="text" name="localidade" placeholder="Cidade e Estado" required />
+          
+          <label>Atendimento:</label>
+          <label><input type="checkbox" name="atendimento" value="Presencial" /> Presencial</label>
+          <label><input type="checkbox" name="atendimento" value="Online" /> Online</label>
+
+          <input type="text" name="contato" placeholder="WhatsApp, Instagram..." required />
+          <input type="text" name="link" placeholder="Link do seu trabalho (opcional)" />
+
+          <button type="submit" class="btn-custom">Enviar Anúncio</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 IcamiabasLab</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="services.js"></script>
+  </body>
+</html>
