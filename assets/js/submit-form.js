@@ -1,4 +1,3 @@
-// assets/js/submit-form.js
 document.getElementById('servico-form').addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -20,13 +19,19 @@ document.getElementById('servico-form').addEventListener('submit', async (e) => 
     body: JSON.stringify(dados)
   });
 
-  const resposta = await res.json();
+  let resposta;
+  try {
+    resposta = await res.json();
+  } catch {
+    resposta = { message: 'Erro inesperado ao processar resposta do servidor.' };
+  }
+
   const mensagem = document.getElementById('mensagem');
   mensagem.textContent = resposta.message;
   mensagem.style.color = res.ok ? 'lightgreen' : 'red';
 
   if (res.ok) {
     form.reset();
-    fetchServices(); // recarrega os cards, se essa função estiver no services.js
+    fetchServices?.(); // chama se existir
   }
 });
