@@ -1,0 +1,31 @@
+/* Ajustes visuais extras para o IcamiabasLab */
+
+/* Importação de fontes do Google Fonts se quiser */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+input, textarea, select, button {
+  outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 0 2px #386b14;
+}
+
+button:hover {
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+/* Ajustes de responsividade e layout adicionais se quiser */
+@media (max-width: 640px) {
+  header nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IcamiabasLab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-[#280a32] text-white">
+  <!-- Cabeçalho -->
+  <header class="flex justify-between items-center p-6">
+    <h1 class="text-2xl font-bold text-[#386b14]">IcamiabasLab</h1>
+    <nav class="space-x-4">
+      <a href="#servicos" class="text-white hover:text-[#386b14]">Serviços</a>
+      <a href="#cadastro" class="text-white hover:text-[#386b14]">Cadastro</a>
+      <a href="#" class="bg-white text-[#280a32] px-4 py-2 rounded hover:bg-[#386b14] hover:text-white">Divulgue seu serviço</a>
+    </nav>
+  </header>
+
+  <!-- Seção Hero -->
+  <section class="text-center mt-16 px-4">
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Impulsione o trabalho das mulheres da Amazônia</h2>
+    <p class="text-lg md:text-xl mb-6">Conectamos talentos da região periférica à economia digital.</p>
+    <form class="max-w-md mx-auto flex">
+      <input type="email" placeholder="Digite seu e-mail" class="flex-1 p-3 rounded-l bg-white text-[#280a32]" />
+      <button class="bg-[#386b14] px-6 text-white font-semibold rounded-r">Quero apoiar</button>
+    </form>
+  </section>
+
+  <!-- Cards de serviço -->
+  <section id="servicos" class="mt-24 px-6">
+    <h3 class="text-3xl font-bold mb-6 text-center">Serviços em Destaque</h3>
+    <div id="lista-servicos"  class="grid md:grid-cols-3 gap-6">
+      <!-- Card exemplo -->
+      <div class="bg-white text-[#280a32] p-4 rounded shadow">
+        <h4 class="text-xl font-bold">Maria Silva</h4>
+        <p><strong>Serviço:</strong> Cabelereira</p>
+        <p><strong>Local:</strong> Manaus - AM</p>
+        <p><strong>Atendimento:</strong> Presencial</p>
+        <p><strong>Contato:</strong> (92) 91234-5678</p>
+        <p><a href="#" class="text-[#386b14] underline">Ver mais</a></p>
+      </div>
+      <!-- Replicar para outros cards -->
+    </div>
+  </section>
+
+
+  <!-- Formulário de cadastro -->
+  <section id="cadastro" class="mt-24 px-6 mb-16">
+    <h3 class="text-3xl font-bold mb-6 text-center">Cadastre seu serviço</h3>
+    <form action="https://formsubmit.co/kakacordovil@gmail.com" method="POST" class="max-w-2xl mx-auto grid gap-4">
+      <input type="text" name="nome" placeholder="Nome completo" required class="p-3 rounded text-[#280a32]" />
+      <input type="text" name="servico" placeholder="Tipo de serviço" required class="p-3 rounded text-[#280a32]" />
+      <input type="text" name="localidade" placeholder="Cidade e Estado" required class="p-3 rounded text-[#280a32]" />
+      <label class="block text-white">Atendimento:</label>
+      <div class="flex gap-4">
+        <label><input type="checkbox" name="atendimento" value="Presencial" /> Presencial</label>
+        <label><input type="checkbox" name="atendimento" value="Online" /> Online</label>
+      </div>
+      <input type="text" name="contato" placeholder="WhatsApp, Instagram..." required class="p-3 rounded text-[#280a32]" />
+      <input type="url" name="link" placeholder="Link do seu trabalho (opcional)" class="p-3 rounded text-[#280a32]" />
+      <button type="submit" class="bg-[#386b14] text-white px-6 py-3 rounded font-semibold">Enviar Anúncio</button>
+    </form>
+  </section>
+
+  <script src="services.js"></script>
+
+</body>
+</html>
