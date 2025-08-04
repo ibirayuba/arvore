@@ -3,6 +3,7 @@
 // Exibe os serviços usando a chave pública, sem permitir inserts
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
+
 const supabaseUrl = 'https://vymiwjhqbqzdydbdzqhu.supabase.co';
 const supabaseKey = 'sb_publishable_e0Qxx98pQTMkQsgzCL-QwA_vv0Mp3Hq';
 const supabase = createClient(supabaseUrl, supabaseKey);
@@ -47,3 +48,4 @@ async function fetchServices() {
 }
 
 document.addEventListener('DOMContentLoaded', fetchServices);
+window.fetchServices = fetchServices;

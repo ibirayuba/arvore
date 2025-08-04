@@ -32,6 +32,15 @@ document.getElementById('servico-form').addEventListener('submit', async (e) => 
 
   if (res.ok) {
     form.reset();
-    fetchServices?.(); // chama se existir
+
   }
+
+  if (typeof fetchServices === 'function') {
+    fetchServices();
+    }
+
+    setTimeout(() => {
+    mensagem.textContent = '';
+    mensagem.style.color = ''; 
+    }, 4000); // limpa após 4 segundos
 });

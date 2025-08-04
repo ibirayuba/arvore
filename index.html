@@ -118,7 +118,7 @@
 
 
     <!-- formulário de cadastro -->
-    <section id="cadastro" class="p-10 md-p-l5 bg-indigo-lightest-10">
+    <section id="cadastroA" class="p-10 md-p-l5 bg-indigo-lightest-10">
     <h2 class="white fs-l2 fw-800 mb-5">Cadastre seu serviço</h2>
     <form id="servico-form" class="flex flex-wrap gap-5">
         <input name="nome" type="text" placeholder="Nome completo" required class="input w-100pc md-w-30pc">
@@ -138,7 +138,30 @@
     </form>
     <div id="mensagem" class="white mt-5"></div>
     </section>
+    
+    <!-- formulário de cadastro -->
+    <section id="cadastro" class="py-l10 bg-indigo-lightest-10">
+    <div class="md-w-50pc mx-auto text-center">
+        <h2 class="white fs-l2 fw-800 mb-8">Cadastre seu serviço</h2>
+        <form id="servico-form" class="flex flex-column gap-5 items-center">
+        <input name="nome" type="text" placeholder="Nome completo" required class="input w-100pc">
+        <input name="servico" type="text" placeholder="Tipo de serviço" required class="input w-100pc">
+        <input name="localidade" type="text" placeholder="Cidade e Estado" required class="input w-100pc">
 
+        <div class="w-100pc flex gap-5 items-center justify-center">
+            <label class="white fs-s3">Atendimento:</label>
+            <label class="white"><input type="checkbox" name="atendimento" value="Presencial"> Presencial</label>
+            <label class="white"><input type="checkbox" name="atendimento" value="Online"> Online</label>
+        </div>
+
+        <input name="contato" type="text" placeholder="WhatsApp, Instagram..." required class="input w-100pc">
+        <input name="link" type="text" placeholder="Link do seu trabalho (opcional)" class="input w-100pc">
+
+        <button type="submit" class="button bg-indigo white fs-s3 mt-5">Enviar Anúncio</button>
+        </form>
+        <div id="mensagem" class="white mt-5 fs-s3"></div>
+    </div>
+    </section>
 
     <!-- footer -->
     <footer class="p-5 md-p-l5 bg-indigo-lightest-10">
@@ -219,7 +242,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/services.js"></script>
+    <script type="module" src="assets/js/services.js"></script>
     <script type="module" src="assets/js/submit-form.js"></script>
 
 </body>
