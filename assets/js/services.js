@@ -5,7 +5,7 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 
 
 const supabaseUrl = 'https://vymiwjhqbqzdydbdzqhu.supabase.co';
-const supabaseKey = 'sb_publishable_e0Qxx98pQTMkQsgzCL-QwA_vv0Mp3Hq';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5bWl3amhxYnF6ZHlkYmR6cWh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQxMDAxNTUsImV4cCI6MjA2OTY3NjE1NX0.CpVUh-3IDSgkO7N9YjYyBZayTviDjlxsgdUAj9cmhUE';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const container = document.getElementById('services-list');
