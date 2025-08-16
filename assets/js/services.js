@@ -31,11 +31,11 @@ async function fetchServices() {
 
   container.innerHTML = data.map(service => `
     <div class="w-100pc md-w-50pc">
-      <div class="br-8 p-5 m-5 bg-indigo-lightest-10 pointer hover-scale-up-1 ease-300">
-        <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-4 fs-s4 uppercase">
+      <div class="br-8 p-5 m-5 bg-teal-lightest-10 pointer hover-scale-up-1 ease-300">
+        <div class="inline-block bg-teal teal-lightest br-3 px-4 py-1 mb-4 fs-s4 uppercase">
           ${service.servico || 'Serviço'}
         </div>
-        <div class="indigo-lightest fw-600 fs-m1">
+        <div class="teal-lightest fw-600 fs-m1">
           <strong>${service.nome}</strong><br>
           ${service.localidade}<br>
           <span class="opacity-50">${service.atendimento}</span><br>
