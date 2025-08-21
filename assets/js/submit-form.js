@@ -6,11 +6,14 @@ document.getElementById('servico-form').addEventListener('submit', async (e) => 
 
   const dados = {
     nome: form.nome.value,
-    servico: form.servico.value,
-    localidade: form.localidade.value,
-    atendimento: atendimentoValues.join(', '),
+    responsavel: form.responsavel.value || '',
+    categoria: form.categoria.value,
+    descricao: form.descricao.value || '',
+    local: form.local.value || '',
     contato: form.contato.value,
-    link: form.link.value || ''
+    email: form.email.value || '',
+    link: form.link.value || '',
+    atendimento: atendimentoValues.join(', ')
   };
 
   const res = await fetch('/api/submit', {
@@ -32,15 +35,14 @@ document.getElementById('servico-form').addEventListener('submit', async (e) => 
 
   if (res.ok) {
     form.reset();
-
   }
 
   if (typeof fetchServices === 'function') {
     fetchServices();
-    }
+  }
 
-    setTimeout(() => {
+  setTimeout(() => {
     mensagem.textContent = '';
-    mensagem.style.color = ''; 
-    }, 4000); // limpa após 4 segundos
+    mensagem.style.color = '';
+  }, 4000);
 });

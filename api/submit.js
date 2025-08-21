@@ -11,17 +11,30 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { nome, servico, localidade, atendimento, contato, link } = req.body;
+    const {
+      nome,
+      responsavel,
+      categoria,
+      descricao,
+      local,
+      contato,
+      email,
+      link,
+      atendimento
+    } = req.body;
 
     console.log('📦 Dados recebidos:', req.body);
 
     const { error } = await supabase.from('servicos').insert([{
       nome,
-      servico,
-      localidade,
-      atendimento,
+      responsavel,
+      categoria,
+      descricao,
+      local,
       contato,
-      link
+      email,
+      link,
+      atendimento
     }]);
 
     if (error) {
@@ -31,7 +44,7 @@ module.exports = async (req, res) => {
 
     return res.status(200).json({ message: 'Serviço salvo com sucesso!' });
   } catch (err) {
-    console.error('💥 Erro inesperado:', err);
+    console.error('🚨 Erro inesperado:', err);
     return res.status(500).json({ message: 'Erro inesperado', error: err.message });
   }
 };

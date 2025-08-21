@@ -52,14 +52,14 @@
             <div>
                 <h1 class="white fs-l3 lh-2 md-fs-xl1 md-lh-1 fw-900 ">Impulsione o trabalho das <br />mulheres LBTI da Amazônia</h1>
 
-                <div class="br-8 mt-10 inline-flex">
+                <!--div class="br-8 mt-10 inline-flex">
                     <input type="text"
                         class="input-lg half bw-0 fw-200 bg-purple-lightest-10 white ph-purple-lightest focus-white opacity-80 fs-s3 py-5 min-w-25vw br-r-0"
                         placeholder="Endereço de Email">
                     <button
                         class="button-lg bg-purple-lightest-20 purple-lightest focus-white fw-300 fs-s3 mr-0 br-l-0">Pedir informação</button>
                 </div>
-                <!--div class="white opacity-20 fs-s3 mt-3">No credit card required</span-->
+                <div class="white opacity-20 fs-s3 mt-3">No credit card required</span-->
             </div>
         </div>
     </section>
@@ -134,19 +134,36 @@
     <section id="cadastro" class="p-10 md-p-l5 bg-purple-lightest-10">
         <div class="md-w-50pc mx-auto text-center">
             <h2 class="white fs-l2 fw-800 mb-5">Cadastre seu serviço</h2>
-            <form id="servico-form" class="flex flex-column gap-5 items-center">
-                <input name="nome" type="text" placeholder="Nome" required class="input w-100pc mb-4  ">
-                <input name="servico" type="text" placeholder="Tipo de serviço" required class="input w-100pc mb-4 ">
-                <input name="localidade" type="text" placeholder="Cidade e Estado" required class="input w-100pc mb-4 ">
-                <input name="contato" type="text" placeholder="WhatsApp, Instagram..." required class="input w-100pc mb-4 ">
-                <input name="link" type="text" placeholder="Link do seu trabalho (opcional)" class="input w-100pc mb-4 ">
-                <div class="w-100pc flex gap-5 items-center w">
-                    <label class="white fs-s3">Atendimento:</label>
-                    <label class="white px-4"><input type="checkbox" name="atendimento" value="Presencial"> Presencial</label>
-                    <label class="white px-4"><input type="checkbox" name="atendimento" value="Online"> Online</label>
+            <form id="servico-form" class="max-w-md mx-auto p-4">
+                <input type="text" name="nome" placeholder="Nome" required class="w-full mb-3 p-2 rounded" />
+
+                <input type="text" name="responsavel" placeholder="Responsável (opcional)" class="w-full mb-3 p-2 rounded" />
+
+                <input type="text" name="categoria" placeholder="Categoria" required class="w-full mb-3 p-2 rounded" />
+
+                <textarea name="descricao" placeholder="Descrição (opcional)" class="w-full mb-3 p-2 rounded"></textarea>
+
+                <input type="text" name="local" placeholder="Espaço físico (opcional)" class="w-full mb-3 p-2 rounded" />
+
+                <input type="text" name="contato" placeholder="Contato, WhatsApp, Instagram..." required class="w-full mb-3 p-2 rounded" />
+
+                <input type="email" name="email" placeholder="E-mail (opcional)" class="w-full mb-3 p-2 rounded" />
+
+                <input type="text" name="link" placeholder="Link do seu trabalho (opcional)" class="w-full mb-3 p-2 rounded" />
+
+                <div class="mb-4">
+                    Atendimento:
+                    <label><input type="checkbox" name="atendimento" value="Presencial" /> Presencial</label>
+                    <label><input type="checkbox" name="atendimento" value="Online" /> Online</label>
                 </div>
-                <button type="submit" class="button bg-purple white fs-s3 mt-5">Enviar Anúncio</button>
-            </form>
+
+                <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded">
+                    Enviar Anúncio
+                </button>
+
+                <p id="mensagem" class="mt-4 text-center text-sm"></p>
+                </form>
+
             <div id="mensagem" class="white mt-5"></div>
         </div>
     
