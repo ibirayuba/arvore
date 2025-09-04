@@ -19,6 +19,18 @@
     .custom-bg {
         background-color: #110318;
     }
+    #servico-form textarea{
+        min-height: 140px;   /* ajuste fino aqui se quiser maior/menor */
+        line-height: 1.4;
+        resize: vertical;    /* usuária pode alongar se precisar */
+    }
+    /* visual do botão desabilitado */
+    #servico-form .btn-primary[disabled]{
+        opacity: .6;
+        cursor: not-allowed;
+    }
+    /* reserva altura da mensagem pra não pular layout */
+    #mensagem{ min-height: 1.25rem; }
     </style>
 </head>
 
@@ -138,7 +150,7 @@
                 <input name="nome" type="text" placeholder="Nome" required class="input w-100pc mb-4  ">
                 <input name="responsavel" type="text" placeholder="Responsável (opcional)" class="input w-100pc mb-4  ">
                 <input name="categoria" type="text" placeholder="Categoria" required class="input w-100pc mb-4 ">
-                <textarea name="descricao" placeholder="Descrição (opcional)" class="input w-100pc mb-4"></textarea>
+                <textarea name="descricao" placeholder="Descrição (opcional)" class="input w-100pc mb-4" rows="6"></textarea>
                 <input name="localidade" type="text" placeholder="Espaço físico (opcional)" class="input w-100pc mb-4 ">
                 <input name="contato" type="text" placeholder="Contato, WhatsApp, Instagram..." required class="input w-100pc mb-4 ">
                 <input name="email" type="text" placeholder="Email (opcional)" class="input w-100pc mb-4 ">
@@ -149,7 +161,7 @@
                     <label class="white px-4"><input type="checkbox" name="atendimento" value="Online"> Online</label>
                     <small class="white opacity-60 fs-s3 mt-2">* Você pode selecionar as duas opções.</small>
                 </div>
-                <button type="submit" class="button bg-purple white fs-s3 mt-5">Enviar Anúncio</button>
+                <button id="enviar-btn" type="submit" class="button bg-purple white fs-s3 mt-5 btn-primary">Enviar Anúncio</button>
             </form>
             <div id="mensagem" class="white mt-5"></div>
         </div>
