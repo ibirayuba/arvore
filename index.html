@@ -19,36 +19,6 @@
     .custom-bg {
         background-color: #110318;
     }
-    /* layout e visual do form * /
-    #servico-form { max-width: 720px; margin: 0 auto; }
-    #servico-form input,
-    #servico-form textarea,
-    #servico-form select {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        padding: 12px 14px;
-        margin-bottom: 12px;
-        background: #1b1022;
-        color: #fff;
-        border: 1px solid #3b2a46;
-        border-radius: 10px;
-        outline: none;
-    }
-    #servico-form ::placeholder { color: #cbbbd6; }
-    /* botão no esquema do Shorthand * /
-    #servico-form .btn-primary {
-        background: #6d28d9; color: #fff; border: 0; border-radius: 12px;
-        padding: 12px 18px; cursor: pointer;
-    }
-    #servico-form .btn-primary:hover { background: #5b21b6; }
-    /* checkboxes/linha de atendimento * /
-    #servico-form .att-row { 
-        display: flex; align-items: center; gap: 18px; 
-        color: #fff; margin: 10px 0 18px;
-    }
-    #servico-form .att-row label { display: inline-flex; align-items: center; gap: 6px; }
-    */
     </style>
 </head>
 
@@ -82,6 +52,14 @@
             <div>
                 <h1 class="white fs-l3 lh-2 md-fs-xl1 md-lh-1 fw-900 ">Impulsione o trabalho das <br />mulheres LBTI da Amazônia</h1>
 
+                <div class="br-8 mt-10 inline-flex">
+                    <input type="text"
+                        class="input-lg half bw-0 fw-200 bg-purple-lightest-10 white ph-purple-lightest focus-white opacity-80 fs-s3 py-5 min-w-25vw br-r-0"
+                        placeholder="Endereço de Email">
+                    <button
+                        class="button-lg bg-purple-lightest-20 purple-lightest focus-white fw-300 fs-s3 mr-0 br-l-0">Pedir informação</button>
+                </div>
+                <!--div class="white opacity-20 fs-s3 mt-3">No credit card required</span-->
             </div>
         </div>
     </section>
@@ -95,6 +73,32 @@
         </div>
     </section>
 
+    <!-- cards of services -- >
+    <section id="servicos1" class="py-l10">
+        <div class="flex flex-column md-flex-row md-w-80pc mx-auto">
+            <div class="w-100pc md-w-50pc">
+                <div class="br-8 p-5 m-5 bg-purple-lightest-10 pointer hover-scale-up-1 ease-300">
+                    <div class="inline-block bg-purple purple-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">
+                        individual</div>
+                    <div class="purple-lightest fw-600 fs-m1">Lorem ipsum <span class="opacity-30"> dolor sit amet,
+                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</span> </div>
+                    <a href="#" class="mt-10 button bg-black fs-s3 white no-underline">Read</a>
+                </div>
+            </div>
+            <div class="w-100pc md-w-50pc">
+                <div class="br-8 p-5 m-5 bg-purple-lightest-10  pointer hover-scale-up-1 ease-300">
+                    <div class="inline-block bg-purple purple-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">
+                        team</div>
+                    <div class="purple-lightest fw-600 fs-m1">Lorem ipsum <span class="opacity-30"> dolor sit amet,
+                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</span> </div>
+                    <a href="#" class="mt-10 button bg-black fs-s3 white no-underline">Read</a>
+
+                </div>
+            </div>
+        </div>
+    </section-->
 
 
     <!-- cards of services -->
@@ -106,40 +110,43 @@
     
 
 
+    <!-- subscribe -- >
+    <section class="p-10 md-p-l5">
+        <div class="br-8 bg-purple-lightest-10 p-5 md-p-l5 flex flex-wrap md-justify-between md-items-center">
+            <div class="w-100pc md-w-33pc">
+                <h2 class="white fs-m4 fw-800">Try Hook today</h2>
+                <p class="fw-600 purple-lightest opacity-40">Get first month free for commercial use. Forever free for
+                    open source products.</p>
+            </div>
+            <div class="w-100pc md-w-50pc">
+                <div class="flex my-5">
+                    <input type="text"
+                        class="input-lg flex-grow-1 bw-0 fw-200 bg-purple-lightest-10 white ph-purple-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
+                        placeholder="Email Address">
+                    <button class="button-lg bg-purple purple-lightest fw-300 fs-s3 br-l-0">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section-->
+
+
     <!-- formulário de cadastro -->
     <section id="cadastro" class="p-10 md-p-l5 bg-purple-lightest-10">
         <div class="md-w-50pc mx-auto text-center">
             <h2 class="white fs-l2 fw-800 mb-5">Cadastre seu serviço</h2>
-            <form id="servico-form" class="max-w-md mx-auto p-4">
-                <input type="text" name="nome" placeholder="Nome" required class="w-full mb-3 p-2 rounded" />
-
-                <input type="text" name="responsavel" placeholder="Responsável (opcional)" class="w-full mb-3 p-2 rounded" />
-
-                <input type="text" name="categoria" placeholder="Categoria" required class="w-full mb-3 p-2 rounded" />
-
-                <textarea name="descricao" placeholder="Descrição (opcional)" class="w-full mb-3 p-2 rounded"></textarea>
-
-                <input type="text" name="local" placeholder="Espaço físico (opcional)" class="w-full mb-3 p-2 rounded" />
-
-                <input type="text" name="contato" placeholder="Contato, WhatsApp, Instagram..." required class="w-full mb-3 p-2 rounded" />
-
-                <input type="email" name="email" placeholder="E-mail (opcional)" class="w-full mb-3 p-2 rounded" />
-
-                <input type="text" name="link" placeholder="Link do seu trabalho (opcional)" class="w-full mb-3 p-2 rounded" />
-
-                <div class="mb-4">
-                    Atendimento:
-                    <label><input type="checkbox" name="atendimento" value="Presencial" /> Presencial</label>
-                    <label><input type="checkbox" name="atendimento" value="Online" /> Online</label>
+            <form id="servico-form" class="flex flex-column gap-5 items-center">
+                <input name="nome" type="text" placeholder="Nome" required class="input w-100pc mb-4  ">
+                <input name="servico" type="text" placeholder="Tipo de serviço" required class="input w-100pc mb-4 ">
+                <input name="localidade" type="text" placeholder="Cidade e Estado" required class="input w-100pc mb-4 ">
+                <input name="contato" type="text" placeholder="WhatsApp, Instagram..." required class="input w-100pc mb-4 ">
+                <input name="link" type="text" placeholder="Link do seu trabalho (opcional)" class="input w-100pc mb-4 ">
+                <div class="w-100pc flex gap-5 items-center w">
+                    <label class="white fs-s3">Atendimento:</label>
+                    <label class="white px-4"><input type="checkbox" name="atendimento" value="Presencial"> Presencial</label>
+                    <label class="white px-4"><input type="checkbox" name="atendimento" value="Online"> Online</label>
                 </div>
-
-                <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded">
-                    Enviar Anúncio
-                </button>
-
-                <p id="mensagem" class="mt-4 text-center text-sm"></p>
-                </form>
-
+                <button type="submit" class="button bg-purple white fs-s3 mt-5">Enviar Anúncio</button>
+            </form>
             <div id="mensagem" class="white mt-5"></div>
         </div>
     
