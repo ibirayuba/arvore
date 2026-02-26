@@ -25,9 +25,10 @@ form.addEventListener('submit', async (e) => {
   const dados = {
     nome: form.nome.value,
     responsavel: form.responsavel?.value || '',
-    categoria: form.categoria.value,
+    servico: form.servico.value,
     descricao: form.descricao?.value || '',
-    local: form.local?.value || '',
+    localidade: form.localidade?.value || '',
+    endereco: form.endereco?.value || '',   
     contato: form.contato.value,
     email: form.email?.value || '',
     link: form.link?.value || '',
@@ -120,3 +121,4 @@ form.addEventListener('submit', async (e) => {
 });
 
 */
+
