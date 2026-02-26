@@ -42,7 +42,7 @@ module.exports = async (req, res) => {
 
     if (error) {
       console.error('🔥 Erro do Supabase:', error);
-      return res.status(500).json({ message: 'Erro ao salvar', ,
+      return res.status(500).json({ message: 'Erro ao salvar',
                                     supabase: {
                                       message: error.message,
                                       details: error.details,
@@ -58,5 +58,6 @@ module.exports = async (req, res) => {
     return res.status(500).json({ message: 'Erro inesperado', error: err.message });
   }
 };
+
 
 
