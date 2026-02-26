@@ -38,8 +38,8 @@ async function fetchServices() {
         <div class="purple-lightest fw-600 fs-m1 break-words">
           <strong>${service.nome || ''}</strong><br>
           ${service.descricao || ''}<br>
-          ${service.localidade || ''}<br>
-          ${service.endereco || ''}<br>
+          <span class="opacity-50">${service.localidade || ''}</span><br>
+          <span class="opacity-50">${service.endereco || ''}</span><br>
           <span class="opacity-50">${service.atendimento || ''}</span><br>
           <span class="opacity-30">${service.contato || ''}</span><br>
           <span class="opacity-30">${service.responsavel || ''}</span>
@@ -52,6 +52,7 @@ async function fetchServices() {
 
 document.addEventListener('DOMContentLoaded', fetchServices);
 window.fetchServices = fetchServices;
+
 
 
 
