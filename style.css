@@ -29,3 +29,30 @@ button:hover {
     margin-top: 1rem;
   }
 }
+
+.contact-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+
+.contact-link{
+  display:inline-block;
+  max-width:100%;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+  text-decoration:none;
+  opacity:.65;
+}
+
+.copy-btn{
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(0,0,0,.35);
+  color:#fff;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:12px;
+}
