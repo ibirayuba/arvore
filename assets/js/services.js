@@ -4,8 +4,8 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
 
-const supabaseUrl = 'https://vymiwjhqbqzdydbdzqhu.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5bWl3amhxYnF6ZHlkYmR6cWh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQxMDAxNTUsImV4cCI6MjA2OTY3NjE1NX0.CpVUh-3IDSgkO7N9YjYyBZayTviDjlxsgdUAj9cmhUE';
+const supabaseUrl = 'https://svcwivctwogwpzhspboq.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN2Y3dpdmN0d29nd3B6aHNwYm9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIwMDY5NzQsImV4cCI6MjA4NzU4Mjk3NH0.SRLONSOKmCG9Kx1o8N2xQDgBAuNlMguwsUQSMh7XZWE';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const container = document.getElementById('services-list');
@@ -37,7 +37,9 @@ async function fetchServices() {
         </div>
         <div class="purple-lightest fw-600 fs-m1 break-words">
           <strong>${service.nome}</strong><br>
+          ${service.descricao}<br>
           ${service.localidade}<br>
+          ${service.endereco}<br>
           <span class="opacity-50">${service.atendimento}</span><br>
           <span class="opacity-30">${service.contato}</span>
         </div>
@@ -49,3 +51,4 @@ async function fetchServices() {
 
 document.addEventListener('DOMContentLoaded', fetchServices);
 window.fetchServices = fetchServices;
+
