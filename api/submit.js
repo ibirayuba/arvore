@@ -14,9 +14,10 @@ module.exports = async (req, res) => {
     const {
       nome,
       responsavel,
-      categoria,
+      servico,
       descricao,
-      local,
+      localidade,
+      endereco,
       contato,
       email,
       link,
@@ -28,9 +29,10 @@ module.exports = async (req, res) => {
     const { error } = await supabase.from('servicos').insert([{
       nome,
       responsavel,
-      categoria,
+      servico,
       descricao,
-      local,
+      localidade,
+      endereco,
       contato,
       email,
       link,
@@ -48,3 +50,4 @@ module.exports = async (req, res) => {
     return res.status(500).json({ message: 'Erro inesperado', error: err.message });
   }
 };
+
