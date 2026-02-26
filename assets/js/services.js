@@ -2,7 +2,7 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
 const supabaseUrl = 'https://svcwivctwogwpzhspboq.supabase.co';
-const supabaseKey = '...'; // tua anon key
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN2Y3dpdmN0d29nd3B6aHNwYm9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIwMDY5NzQsImV4cCI6MjA4NzU4Mjk3NH0.SRLONSOKmCG9Kx1o8N2xQDgBAuNlMguwsUQSMh7XZWE';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const container = document.getElementById('services-list');
@@ -86,7 +86,9 @@ async function fetchServices() {
                     </a>`
                   : `<span class="contact-link">${escapeHtml(contato)}</span>`
                 }
-                <button type="button" class="copy-btn" data-copy="${escapeHtml(contato)}">Copiar</button>
+                <button type="button" class="copy-btn" data-copy="${escapeHtml(contato)}">
+                  <i class="fa-regular fa-clone"></i>
+                </button>
               </div>
             ` : ''}
 

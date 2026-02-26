@@ -33,26 +33,39 @@ button:hover {
 .contact-row{
   display:flex;
   align-items:center;
-  gap:12px;
-  margin-top:10px;
-  flex-wrap:wrap;
+  gap:8px;
+  width:100%;
 }
 
 .contact-link{
-  display:inline-block;
-  max-width:100%;
-  overflow-wrap:anywhere;
+  flex:1;
+  min-width:0;               /* essencial no flex */
+  display:block;
+
+  overflow-wrap:anywhere;    /* quebra qualquer coisa */
   word-break:break-word;
-  text-decoration:none;
-  opacity:.65;
+  white-space:normal;
+
+  text-decoration:underline;
+  opacity:.7;
+  font-size:14px;
 }
 
 .copy-btn{
-  border:1px solid rgba(255,255,255,.2);
-  background:rgba(0,0,0,.35);
-  color:#fff;
-  padding:6px 10px;
-  border-radius:6px;
+  background:transparent;
+  border:none;
+  color:rgba(255,255,255,.6);
   cursor:pointer;
-  font-size:12px;
+  padding:4px;
+  font-size:16px;
+  transition:all .2s ease;
+}
+
+.copy-btn:hover{
+  color:#ffffff;
+  transform:scale(1.1);
+}
+
+.copy-btn:active{
+  transform:scale(0.95);
 }
