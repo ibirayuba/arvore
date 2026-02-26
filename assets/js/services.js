@@ -36,14 +36,14 @@ async function fetchServices() {
           ${service.servico || 'Serviço'}
         </div>
         <div class="purple-lightest fw-600 fs-m1 break-words">
-          <strong>${service.nome}</strong><br>
-          ${service.descricao}<br>
-          ${service.localidade}<br>
-          ${service.endereco}<br>
-          <span class="opacity-50">${service.atendimento}</span><br>
-          <span class="opacity-30">${service.contato}</span>
+          <strong>${service.nome || ''}</strong><br>
+          ${service.descricao || ''}<br>
+          ${service.localidade || ''}<br>
+          ${service.endereco || ''}<br>
+          <span class="opacity-50">${service.atendimento || ''}</span><br>
+          <span class="opacity-30">${service.contato || ''}</span>
         </div>
-        ${service.link ? `<a href="${service.link}" target="_blank" class="mt-5 button bg-black fs-s3 white no-underline">Ver trabalho</a>` : ''}
+        ${service.link ? `<a href="${service.link || ''}" target="_blank" class="mt-5 button bg-black fs-s3 white no-underline">Ver trabalho</a>` : ''}
       </div>
     </div>
   `).join('');
@@ -51,4 +51,5 @@ async function fetchServices() {
 
 document.addEventListener('DOMContentLoaded', fetchServices);
 window.fetchServices = fetchServices;
+
 
