@@ -42,6 +42,7 @@ async function fetchServices() {
           ${service.endereco || ''}<br>
           <span class="opacity-50">${service.atendimento || ''}</span><br>
           <span class="opacity-30">${service.contato || ''}</span>
+          <span class="opacity-30">${service.responsavel || ''}</span>
         </div>
         ${service.link ? `<a href="${service.link || ''}" target="_blank" class="mt-5 button bg-black fs-s3 white no-underline">Ver trabalho</a>` : ''}
       </div>
@@ -51,5 +52,6 @@ async function fetchServices() {
 
 document.addEventListener('DOMContentLoaded', fetchServices);
 window.fetchServices = fetchServices;
+
 
 
