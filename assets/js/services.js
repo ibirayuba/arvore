@@ -74,8 +74,8 @@ async function fetchServices() {
           <div class="purple-lightest fw-600 fs-m1 break-words">
             <strong>${escapeHtml(service.nome || '')}</strong><br>
             ${escapeHtml(service.descricao || '')}<br>
-            ${escapeHtml(service.localidade || '')}<br>
-            ${escapeHtml(service.endereco || '')}<br>
+            <span class="opacity-70">${escapeHtml(service.localidade || '')}<br></span>
+            <span class="opacity-30">${escapeHtml(service.endereco || '')}<br></span>
             <span class="opacity-50">${escapeHtml(service.atendimento || '')}</span>
 
             ${contato ? `

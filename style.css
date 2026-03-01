@@ -39,16 +39,13 @@ button:hover {
 
 .contact-link{
   flex:1;
-  min-width:0;               /* essencial no flex */
+  min-width:0;     
   display:block;
-
-  overflow-wrap:anywhere;    /* quebra qualquer coisa */
-  word-break:break-word;
-  white-space:normal;
-
-  text-decoration:underline;
-  opacity:.7;
+  opacity:0.7;
   font-size:14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .copy-btn{
@@ -62,8 +59,9 @@ button:hover {
 }
 
 .copy-btn:hover{
-  color:#ffffff;
+  color: #b892ff; 
   transform:scale(1.1);
+  opacity: 1;
 }
 
 .copy-btn:active{
