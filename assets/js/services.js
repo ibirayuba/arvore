@@ -67,7 +67,7 @@ async function fetchServices() {
     return `
       <div class="w-100pc md-w-50pc">
         <div class="br-8 p-5 m-5 bg-purple-lightest-10 hover-scale-up-1 ease-300">
-          <div class="inline-block bg-purple purple-lightest br-3 px-4 py-1 mb-4 fs-s4 uppercase">
+          <div class="inline-block bg-purple-lightest-10 purple-lightest br-3 px-4 py-1 mb-4 fs-s4 uppercase br-round">
             ${escapeHtml(service.servico || 'Serviço')}
           </div>
 
@@ -96,7 +96,7 @@ async function fetchServices() {
           </div>
 
           ${service.link ? `
-            <a href="${escapeHtml(service.link)}" target="_blank" class="mt-5 button bg-black fs-s3 white no-underline">
+            <a href="${escapeHtml(service.link)}" target="_blank" class="mt-5 button bg-purple fs-s3 white no-underline">
               Ver trabalho
             </a>` : ''}
         </div>
