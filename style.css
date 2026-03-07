@@ -67,3 +67,27 @@ button:hover {
 .copy-btn:active{
   transform:scale(0.95);
 }
+
+/*mobile contact form on the footer*/
+#footer-info-form {
+    align-items: stretch;
+}
+
+#footer-info-msg {
+    min-height: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    #footer-info-form {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    #footer-info-form input,
+    #footer-info-form button {
+        width: 100%;
+        border-radius: 6px !important;
+    }
+}
+
