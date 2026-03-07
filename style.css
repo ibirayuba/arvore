@@ -68,26 +68,114 @@ button:hover {
   transform:scale(0.95);
 }
 
-/*mobile contact form on the footer*/
+/* FOOTER */
+.footer-icamiabas {
+  overflow-x: hidden;
+}
+
+.footer-wrap {
+  align-items: flex-start;
+}
+
+.footer-form-area {
+  width: 100%;
+}
+
 #footer-info-form {
-    align-items: stretch;
+  align-items: stretch;
+  gap: 0;
 }
 
 #footer-info-msg {
-    min-height: 1.5rem;
+  min-height: 3.2rem;
+  width: 100%;
+  max-width: 420px;
+  margin: 12px auto 0;
+  line-height: 1.5;
+  word-break: break-word;
 }
 
+.footer-social {
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
-    #footer-info-form {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
+  .footer-icamiabas {
+    padding: 2rem 1.25rem;
+  }
 
-    #footer-info-form input,
-    #footer-info-form button {
-        width: 100%;
-        border-radius: 6px !important;
-    }
+  .footer-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-form-area {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .footer-links-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .footer-col {
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-bottom: 1rem;
+  }
+
+  .footer-col h5 {
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-col ul {
+    margin-top: 0.5rem !important;
+  }
+
+  .footer-col li a {
+    display: inline-block;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+
+  #footer-info-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100% !important;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  #footer-info-form input,
+  #footer-info-form button {
+    width: 100%;
+    border-radius: 12px !important;
+  }
+
+  #footer-info-form button {
+    min-height: 56px;
+  }
+
+  #footer-info-msg {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: space-evenly;
+    margin-top: 1.5rem;
+  }
 }
-
